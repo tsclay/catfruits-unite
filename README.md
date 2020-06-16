@@ -2,12 +2,12 @@
 
 Cats, plants, cute names, and everything nice.
 
-## Roles
+## Immediate Tasks
 
-[ ] Build basic server
+- [ ] Build basic server
 
-[ ] Make wireframe
+- [ ] Make wireframe
 
-[ ] Deploy on GitHub Pages
+- [ ] Deploy on GitHub Pages
 
-[ ] Starting modules: express, ejs
+- [ ] Starting modules: express, ejs
