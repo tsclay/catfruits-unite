@@ -4,10 +4,10 @@ Cats, plants, cute names, and everything nice.
 
 ## Immediate Tasks
 
-- [ ] Build basic server => Leland
+- [X] Build basic server => Leland
 
 - [ ] Make wireframe => Hannah L.
 
 - [ ] Deploy on GitHub Pages => Tim
 
-- [ ] Starting modules: express, ejs => Leland
+- [X] Starting modules: express, ejs => Leland
