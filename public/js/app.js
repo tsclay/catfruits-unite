@@ -5,10 +5,10 @@ app.controller(`OurController`, [
     this.hello = `A Little Something to Show Our Appreciation for Your Invaluable Work!`;
     this.indexOfCats = null;
 
-    this.editCat = (cat) => {
+    this.editCat = (c) => {
       $http({
         method: `PUT`,
-        url: `/catfruits/` + Cat._id,
+        url: `/catfruits/` + c._id,
         data: {
           name: this.name,
           image: this.image,
@@ -25,10 +25,10 @@ app.controller(`OurController`, [
       );
     };
 
-    this.deleteCat = (cat) => {
+    this.deleteCat = (c) => {
       $http({
         method: `DELETE`,
-        url: `/catfruits/` + Cat._id,
+        url: `/catfruits/` + c._id,
       }).then(
         (res) => {
           console.log(res);

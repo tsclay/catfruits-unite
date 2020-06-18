@@ -54,12 +54,12 @@
       <div>
         <h1>CatFruits</h1>
         <ul>
-          <li ng-repeat="c in ctrl.cats | orderBy: order | filter: search">
+          <li ng-repeat="c in ctrl.Cats | orderBy: order | filter: search">
             <h2>
               {{c.name}}<br />
               <img ng-src="{{c.image}}" alt="{{c.name}}" /><br />
               <p>{{c.message}}</p>
-              <a href="#" ng-click="ctrl.deleteCat(cat)">delete</a>
+              <a href="#" ng-click="ctrl.deleteCat(c)">delete</a>
               <!-- START OF EDIT FORM -->
               <a
                 href="#"
@@ -68,7 +68,7 @@
                 >edit</a
               >
               <form
-                ng-submit="ctrl.editCat(cat)"
+                ng-submit="ctrl.editCat(c)"
                 ng-if="$index===ctrl.indexOfCats"
               >
                 <input
