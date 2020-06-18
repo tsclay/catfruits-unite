@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="catFruits">
+  <head>
+    <link rel="stylesheet" href="/css/app.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"
+      charset="utf-8"
+    ></script>
+    <script src="/js/app.js" charset="utf-8"></script>
+    <title>CatFruits</title>
+  </head>
+  <body ng-controller="OurController as ctrl">
+    <div class="container">
+      <h1>{{ctrl.hello | uppercase}}</h1>
+      <h1>Add CatFruit</h1>
+      <!-- START FORM -->
+      <form ng-submit="ctrl.addNewCat()">
+        <br />
+        <input
+          type="text"
+          name="name"
+          placeholder="name of CatFruit"
+          ng-model="ctrl.name"
+        /><br />
+        <input
+          type="text"
+          name="image"
+          placeholder="URL or GIF of CatFruit"
+          ng-model="ctrl.image"
+        /><br />
+        <input
+          type="text"
+          name="message"
+          placeholder="message from CatFruit"
+          ng-model="ctrl.message"
+        /><br />
+        <input type="submit" value="add CatFruit" />
+      </form>
+      <button ng-click="order = 'name'">Order By Cat Name</button>
+      <button ng-click="order = 'message'">Order By Cat Message</button>
+      <br /><br />
+      <h1>Search for CatFruit</h1>
+      <input
+        type="text"
+        ng-model="search"
+        placeholder="search for a CatFruits!"
+      />
+
+      <!-- END FORM -->
+      <!-- START MODELS DISPLAY -->
+      <div>
+        <h1>CatFruits</h1>
+        <ul>
+          <li ng-repeat="c in ctrl.cats | orderBy: order | filter: search">
+            <h2>
+              {{c.name}}<br />
+              <img ng-src="{{c.image}}" alt="{{c.name}}" /><br />
+              <p>{{c.message}}</p>
+              <a href="#" ng-click="ctrl.deleteCat(cat)">delete</a>
+              <!-- START OF EDIT FORM -->
+              <a
+                href="#"
+                ng-if="$index !== ctrl.indexOfCats"
+                ng-click="ctrl.indexOfCats = $index"
+                >edit</a
+              >
+              <form
+                ng-submit="ctrl.editCat(cat)"
+                ng-if="$index===ctrl.indexOfCats"
+              >
+                <input
+                  type="text"
+                  ng-model="ctrl.name"
+                  placeholder="{{c.name}}"
+                /><br />
+                <input
+                  type="text"
+                  ng-model="ctrl.image"
+                  placeholder="{{c.image}}"
+                /><br />
+                <input
+                  type="text"
+                  ng-model="ctrl.message"
+                  placeholder="{{c.message}}"
+                /><br />
+                <input type="submit" />
+              </form>
+              <!-- END OF EDIT FORM -->
+            </h2>
+          </li>
+        </ul>
+      </div>
+      <!-- END MODELS DISPLAY -->
+    </div>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+{
+  "name": "catfruits-unite",
+  "version": "1.0.0",
+  "description": "Cats, plants, cute names, and everything nice.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tsclay/catfruits-unite.git"
+  },
+  "keywords": [
+    "instructor_appreciation"
+  ],
+  "author": "collaborative",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tsclay/catfruits-unite/issues"
+  },
+  "homepage": "https://github.com/tsclay/catfruits-unite#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.9.19"
+  }
+}
