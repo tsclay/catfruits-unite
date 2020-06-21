@@ -15,6 +15,7 @@ body {
 header {
   width: 100%;
   margin: 0;
+  padding-bottom: 1rem;
   background-color: #ffb6c1;
   text-align: center;
   font-family: "Merriweather", serif;
@@ -28,12 +29,93 @@ header {
 }
 
 header h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   text-transform: uppercase;
   margin: 0;
   padding: 1rem 0 1rem 0;
   color: #fff;  
   text-shadow: 2px 2px 3px #cccccc;
+}
+
+
+button, .button {
+  outline: none;
+  border: none;
+  background-color: #00c4cc;
+  box-shadow: 2px 2px 3px #525252;
+  color: #fff;
+  border-radius: 10px;
+  padding: .5rem .5rem;
+  letter-spacing: .07rem;
+  font-size: 1rem;
+}
+
+button:hover, .button:hover{
+  cursor: pointer;
+}
+
+button:active, .button:active {
+  box-shadow: inset 2px 2px 3px #525252;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+}
+
+.appreciation-paragraph {
+  width: 60%;  
+  margin: 5rem auto;
+  padding: 2rem 1rem;
+  border-radius: 10px;
+  text-align: center;
+  color: #ffb6c1;
+  text-shadow: 2px 2px 3px #cccccc;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+}
+
+.random-cats-holder {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.random-cats-holder h2, .new-form h3 {
+  text-transform: uppercase;
+  color: #ffb6c1;
+  text-shadow: 2px 2px 4px #cccccc;
+  font-size: 3rem;
+  letter-spacing: .2rem;;
+}
+
+.image-holder {
+  width: 60%;
+  height: auto;
+  margin: auto;
+  overflow: hidden;
+}
+
+.image-holder img{
+  height: 100%;
+  width: 100%;
+}
+
+hr {
+  border: 2px solid #ffb6c1;
+  width: 100%; 
+  margin: auto;
 }
 
 .header-section-two {
@@ -43,6 +125,13 @@ header h2 {
   align-items: center;
   padding: 2rem 2rem;
   background-color: #ffffff;
+}
+
+.new-form {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .search {
@@ -69,98 +158,12 @@ input {
   outline: none;
 }
 
-button, .button {
-  outline: none;
-  border: none;
-  background-color: #00c4cc;
-  box-shadow: 2px 2px 3px #525252;
-  color: #fff;
-  border-radius: 10px;
-  padding: .5rem .5rem;
-  letter-spacing: .07rem;
-  font-size: 1rem;
-}
-
-button:hover, .button:hover{
-  cursor: pointer;
-}
-
-button:active, .button:active {
-  box-shadow: inset 2px 2px 3px #525252;
-
-}
-
-ul {
-  list-style: none;
-}
-
-.new-form {
-  display:flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-
-.container {
-  width: 90%;
-  margin: auto;
-}
-
-.appreciation-paragraph {
-  width: 60%;  
-  margin: 3rem auto;
-  padding: 2rem 1rem;
-  border-radius: 10px;
-  box-shadow: 2px 2px 5px #cccccc;
-  background-color: #ffb6c1;
-  text-align: center;
-  color: #ffffff;
-  text-shadow: 2px 2px 3px #cccccc;
-  letter-spacing: 2px;
-}
-
-.random-cats-holder {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.random-cats-holder h2, .new-form h3 {
-  text-transform: uppercase;
-  color: #ffb6c1;
-  text-shadow: 2px 2px 4px #cccccc;
-  font-size: 3rem;
-  letter-spacing: .2rem;;
-}
-
-.image-holder {
-  width: 60%;
-  height: auto;
-  margin: auto;
-  overflow: hidden;
-}
-
-.image-holder img{
-  height: 100%;
-  width: 100%;
-}
-
 .models-display {
   background-color: #ffb6c1;
   margin-top: 3rem;
-  padding: 2rem 1rem;
+  padding: 4rem 1rem;
 }
 
-.models-display h3 {
-  font-size: 2rem;
-  letter-spacing: .1rem;
-  margin: 0;
-  padding: 1rem 0 1rem 0;
-  color: #fff;  
-  text-shadow: 2px 2px 3px #cccccc;
-}
 
 .models-display ul {
   width: 70%;

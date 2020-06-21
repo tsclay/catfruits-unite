@@ -14,64 +14,54 @@
   </head>
   <body ng-controller="OurController as ctrl">
     <header>
-
       <ul class="header-section-one">
         <li><h2>Cat-Fruit United</h2></li>
         <li><img src="https://img.icons8.com/bubbles/75/000000/cat.png"/></li>
       </ul>
-
-      <div class="header-section-two">
-        <button>New Cat</button>
-        <div class="search">
-          <input type="text" ng-model="search" placeholder="search for cats"/>
-          <button ng-click="order = 'name'">Order By Cat Name</button>
-          <button ng-click="order = 'message'">Order By Cat Message</button>
-        </div>
-
-      </div>
-
     </header>
-    <div class="container">
-   
-      <!-- START FORM -->
-      <form class="new-form" ng-submit="ctrl.addNewCat()">
-        <h3>Add New Cat</h3>
-        <input
-          type="text"
-          name="name"
-          placeholder="Cat's Name"
-          ng-model="ctrl.name"
-        /><br />
-        <input
-          type="text"
-          name="image"
-          placeholder="Image"
-          ng-model="ctrl.image"
-        /><br />
-        <input
-          type="text"
-          name="message"
-          placeholder="Message"
-          ng-model="ctrl.message"
-        /><br />
-        <input class="button" type="submit" value="Add Cat" />
-      </form>
-      <!-- END FORM -->
 
-      <!-- MAIN SECTION TO MATCH WIREFRAME -->
-      <h3 class="appreciation-paragraph">{{ctrl.hello}}</h1>
-      <div class="random-cats-holder">
-        <div class="image-holder">
-          <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1327&q=80" alt="">
-        </div>
-        <h2>Random Name</h2>
-        <button>I Need A Cat!</button>
+    <!-- SEARCH FILTERS AND NEW FORM TOGGLE -->
+    <div class="header-section-two">
+      <button>New Cat</button>
+      <button><a href="#randomcat">Random Cat</a></button>
+
+      <div class="search">
+        <input type="text" ng-model="search" placeholder="search for cats"/>
+        <button ng-click="order = 'name'">Order By Cat Name</button>
+        <button ng-click="order = 'message'">Order By Cat Message</button>
       </div>
     </div>
 
+    <h3 class="appreciation-paragraph">{{ctrl.hello}}</h1>
+
+       
+    <!-- START FORM -->
+    <form  ng-if="newform === true" class="new-form" ng-submit="ctrl.addNewCat()">
+      <h3>Add New Cat</h3>
+      <input
+        type="text"
+        name="name"
+        placeholder="Cat's Name"
+        ng-model="ctrl.name"
+      /><br />
+      <input
+        type="text"
+        name="image"
+        placeholder="Image"
+        ng-model="ctrl.image"
+      /><br />
+      <input
+        type="text"
+        name="message"
+        placeholder="Message"
+        ng-model="ctrl.message"
+      /><br />
+      <input class="button" type="submit" value="Add Cat" />
+    </form>
+    <!-- END FORM -->
       <!-- START MODELS DISPLAY -->
+
       <div class="models-display">
-        <h3>The Kattery: </h3>
         <ul>
           <li class="search-li" ng-repeat="c in ctrl.Cats | orderBy: order | filter: search">
               <img ng-src="{{c.image}}" alt="{{c.name}}" />
@@ -111,6 +101,18 @@
         </ul>
       </div>
       <!-- END MODELS DISPLAY -->
+      <div class="container">
+      <!-- MAIN SECTION TO MATCH WIREFRAME -->
+      <div id="randomcat" class="random-cats-holder">
+        <h2>RANDOM CAT TIME</h2>
+
+        <div class="image-holder">
+          <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1327&q=80" alt="">
+        </div>
+        <h2>Random Name</h2>
+        <button>I Need A Cat!</button>
+      </div>
+      </div>
     <footer>
       <p>Created with Love By @2020 Pajama Pants</p>
     </footer>
