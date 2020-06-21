@@ -13,46 +13,65 @@
     <title>CatFruits</title>
   </head>
   <body ng-controller="OurController as ctrl">
+    <header>
+
+      <ul class="header-section-one">
+        <li><h2>Cat-Fruit United</h2></li>
+        <li><img src="https://img.icons8.com/bubbles/75/000000/cat.png"/></li>
+      </ul>
+
+      <div class="header-section-two">
+        <button>New Cat</button>
+        <div class="search">
+          <input type="text" ng-model="search" placeholder="search for cats"/>
+          <button ng-click="order = 'name'">Order By Cat Name</button>
+          <button ng-click="order = 'message'">Order By Cat Message</button>
+        </div>
+
+      </div>
+
+    </header>
     <div class="container">
-      <h1>{{ctrl.hello | uppercase}}</h1>
-      <h1>Add CatFruit</h1>
+   
       <!-- START FORM -->
-      <form ng-submit="ctrl.addNewCat()">
-        <br />
+      <form class="new-form" ng-submit="ctrl.addNewCat()">
+        <h3>Add New Cat</h3>
         <input
           type="text"
           name="name"
-          placeholder="name of CatFruit"
+          placeholder="Cat's Name"
           ng-model="ctrl.name"
         /><br />
         <input
           type="text"
           name="image"
-          placeholder="URL or GIF of CatFruit"
+          placeholder="Cat's Image"
           ng-model="ctrl.image"
         /><br />
         <input
           type="text"
           name="message"
-          placeholder="message from CatFruit"
+          placeholder="Cat's Message"
           ng-model="ctrl.message"
         /><br />
-        <input type="submit" value="add CatFruit" />
+        <input class="button" type="submit" value="Add Cat" />
       </form>
-      <button ng-click="order = 'name'">Order By Cat Name</button>
-      <button ng-click="order = 'message'">Order By Cat Message</button>
-      <br /><br />
-      <h1>Search for CatFruit</h1>
-      <input
-        type="text"
-        ng-model="search"
-        placeholder="search for a CatFruits!"
-      />
-
       <!-- END FORM -->
+
+      <!-- MAIN SECTION TO MATCH WIREFRAME -->
+      <h3 class="appreciation-paragraph">{{ctrl.hello}}</h1>
+      <div class="random-cats-holder">
+        <div class="image-holder">
+          <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1327&q=80" alt="">
+        </div>
+        <h2>Random Name</h2>
+        <button>I Need A Cat!</button>
+      </div>
+    </div>
+
       <!-- START MODELS DISPLAY -->
-      <div>
-        <h1>CatFruits</h1>
+      <div class="models-display">
+        <h3>Your Searched Cats: </h3>
         <ul>
           <li ng-repeat="c in ctrl.Cats | orderBy: order | filter: search">
             <h2>
@@ -94,6 +113,8 @@
         </ul>
       </div>
       <!-- END MODELS DISPLAY -->
-    </div>
+    <footer>
+      <p>Created with Love By @2020 Pajama Pants</p>
+    </footer>
   </body>
 </html>
