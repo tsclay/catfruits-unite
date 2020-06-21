@@ -45,13 +45,13 @@
         <input
           type="text"
           name="image"
-          placeholder="Cat's Image"
+          placeholder="Image"
           ng-model="ctrl.image"
         /><br />
         <input
           type="text"
           name="message"
-          placeholder="Cat's Message"
+          placeholder="Message"
           ng-model="ctrl.message"
         /><br />
         <input class="button" type="submit" value="Add Cat" />
@@ -71,25 +71,24 @@
 
       <!-- START MODELS DISPLAY -->
       <div class="models-display">
-        <h3>Your Searched Cats: </h3>
+        <h3>The Kattery: </h3>
         <ul>
-          <li ng-repeat="c in ctrl.Cats | orderBy: order | filter: search">
-            <h2>
-              {{c.name}}<br />
-              <img ng-src="{{c.image}}" alt="{{c.name}}" /><br />
-              <p>{{c.message}}</p>
-              <a href="#" ng-click="ctrl.deleteCat(c)">delete</a>
+          <li class="search-li" ng-repeat="c in ctrl.Cats | orderBy: order | filter: search">
+              <img ng-src="{{c.image}}" alt="{{c.name}}" />
+              <div class="search-results">
+              <h2>{{c.name}}</h2>
+              <p>"{{c.message}}"</p>
+              <a class="button" ng-click="ctrl.deleteCat(c)">delete</a>
+              <a class="button" ng-if="$index !== ctrl.indexOfCats" ng-click="ctrl.indexOfCats = $index">edit</a>
+              </div>
+              
               <!-- START OF EDIT FORM -->
-              <a
-                href="#"
-                ng-if="$index !== ctrl.indexOfCats"
-                ng-click="ctrl.indexOfCats = $index"
-                >edit</a
-              >
+
               <form
                 ng-submit="ctrl.editCat(c)"
                 ng-if="$index===ctrl.indexOfCats"
               >
+                <h2>Edit Info</h2>
                 <input
                   type="text"
                   ng-model="ctrl.name"
@@ -105,10 +104,9 @@
                   ng-model="ctrl.message"
                   placeholder="{{c.message}}"
                 /><br />
-                <input type="submit" />
+                <input class="button" type="submit" />
               </form>
               <!-- END OF EDIT FORM -->
-            </h2>
           </li>
         </ul>
       </div>
