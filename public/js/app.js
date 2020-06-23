@@ -4,7 +4,43 @@ app.controller(`OurController`, [
   function ($http) {
     this.hello = `A Little Something to Show Our Appreciation for Your Invaluable Work!`;
     this.indexOfCats = null;
+    this.Cats = [];
+    this.index = null;
+    this.catImage = null;
+    this.catName = null;
 
+    this.showPrevImage = () => {
+      if (this.catImage === null && this.Cats.length > 0) {
+        this.index = 0
+        this.catImage = this.Cats[this.index].image
+        this.catName = this.Cats[this.index].name
+      } else if (this.catImage === null && this.Cats.length === 0) {
+        return;
+      } else {
+        if (this.index > this.Cats.length) {
+          this.index --;
+        } else {
+          this.index = this.Cats.length - 1;
+        }
+      }
+    }
+
+    this.showNextImage = () => {
+      if (this.catImage === null && this.Cats.length > 0) {
+        this.index = 0
+        this.catImage = this.Cats[this.index].image
+        this.catName = this.Cats[this.index].name
+      } else if (this.catImage === null && this.Cats.length === 0) {
+        return;
+      } else {
+        if(this.index < this.Cats.length) {
+          this.index ++;
+        } else {
+          this.index = 0;
+        }
+      }
+    }
+  
     this.editCat = (c) => {
       $http({
         method: `PUT`,
@@ -47,7 +83,7 @@ app.controller(`OurController`, [
       }).then(
         (response) => {
           this.Cats = response.data;
-          console.log(response.data);
+          console.log(this.Cats);
         },
         (error) => {
           console.log(error);
@@ -75,6 +111,9 @@ app.controller(`OurController`, [
         }
       );
     };
+
     this.getCats();
+    console.log('this.Cats Array is -', this.Cats);
+    
   },
 ]);
