@@ -104,13 +104,17 @@
       <div class="container">
       <!-- MAIN SECTION TO MATCH WIREFRAME -->
       <div id="randomcat" class="random-cats-holder">
-        <h2>RANDOM CAT TIME</h2>
+        <h2>A Carousel of Cats</h2>
 
         <div class="image-holder">
-          <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1327&q=80" alt="">
+          <button ng-click="ctrl.showPrevImage()"> < </button>
+          <img ng-if="ctrl.index === null" src="https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="cat image">
+          <img ng-if="ctrl.index != null" src="{{ctrl.catImage}}" alt="">
+          <button ng-click="ctrl.showNextImage"> > </button>
         </div>
-        <h2>Random Name</h2>
-        <button>I Need A Cat!</button>
+        <h2 ng-if="ctrl.index === null">Muffikins</h2>
+        <h2 ng-if="ctrl.index != null">{{ctrl.catName}}</h2>
+        <button>I WANT A RANDOM CAT</button>
       </div>
       </div>
     <footer>

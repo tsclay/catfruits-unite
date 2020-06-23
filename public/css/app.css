@@ -102,14 +102,24 @@ ul {
 
 .image-holder {
   width: 60%;
+  padding: 10px;
   height: auto;
   margin: auto;
   overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .image-holder img{
-  height: 100%;
-  width: 100%;
+  height: auto;
+  width: 70%;
+  margin: 0;
+}
+
+.image-holder button {
+  margin: 0;
 }
 
 hr {
